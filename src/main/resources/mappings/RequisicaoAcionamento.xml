@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+   
+<mapping> 
+    <class-a>br.com.sicredi.digital.microservice.regua_cobranca.data.entity.requisicao_acionamento.DividaPorReguaPorRequisicao</class-a>
+    <class-b>br.com.sicredi.digital.microservice.regua_cobranca.dto.requisicao.DividaPorReguaPorRequisicaoDto</class-b>
+    
+    <field>
+    <a>divida</a>
+    <b>divida</b>
+    
+    <a-hint>br.com.sicredi.digital.microservice.regua_cobranca.data.entity.divida.credito.Parcela</a-hint>
+    <b-hint>br.com.sicredi.digital.microservice.regua_cobranca.dto.divida.ParcelaDto</b-hint>
+    </field>   
+    
+  </mapping>  
+</mappings> 
