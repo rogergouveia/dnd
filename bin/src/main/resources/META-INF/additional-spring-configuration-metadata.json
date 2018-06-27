@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "camunda.datasource.password",
+    "type": "java.lang.String",
+    "description": "A description for 'camunda.datasource.password'"
+  },
+  {
+    "name": "recuperacao.regua-cobranca.fila-requisicao-acionamento.topicExchangeName",
+    "type": "java.lang.String",
+    "description": "A description for 'recuperacao.regua-cobranca.fila-requisicao-acionamento.topicExchangeName'"
+  },
+  {
+    "name": "regua.datasource.url",
+    "type": "java.lang.String",
+    "description": "A description for 'regua.datasource.url'"
+  }
+]}

@@ -1,0 +1,78 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'mad-scientist'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+compileJava.dependsOn(processResources)
+
+repositories {
+	mavenCentral()
+}
+
+//dependencyManagement {
+//    imports {
+//        mavenBom 'org.camunda.bpm:camunda-bom:7.8.0'
+//    }
+//}
+
+dependencies {
+	compile group: 'org.camunda.bpm.extension.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '2.2.0'
+	compile group: 'org.camunda.bpm.extension.springboot.gradle', name: 'camunda-bpm-spring-boot-webjar-gradle-plugin', version: '2.2.0'
+	compile('org.springframework.boot:spring-boot-starter-amqp')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jersey')
+	
+	//compile('org.modelmapper:modelmapper:1.1.0')
+	compile group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+	compile group: 'net.sf.dozer', name: 'dozer-spring', version: '5.5.1'
+	//compile('org.modelmapper.extensions:modelmapper-spring:2.0.0')
+	//compile('com.github.jmnarloch:modelmapper-spring-boot-starter:1.1.0')
+	//compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
+	
+	
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.2'
+	
+	compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
+	
+	
+	//compile('org.springframework.boot:spring-boot-starter-security')
+	
+	//compile('org.camunda.bpm:camunda-engine')
+	//compile('org.camunda.bpm:camunda-engine-spring')
+	
+	//compile('org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter:2.1.0')
+//	compile('org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-webapp:2.3.0')
+	//compile group: 'org.camunda.bpm.extension', name: 'camunda-bpm-spring-boot-starter', version: '1.3.0'
+	//compile group: 'org.camunda.bpm.extension.springboot', name: 'camunda-bpm-spring-boot-starter', version: '2.2.0'
+	
+	
+	
+	
+	annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+	
+	//runtime('org.springframework.boot:spring-boot-devtools')
+	runtime('org.postgresql:postgresql')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.197'
+	
+	//testCompile('org.springframework.security:spring-security-test')
+}
+

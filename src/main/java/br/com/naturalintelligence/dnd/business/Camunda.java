@@ -30,7 +30,7 @@ public class Camunda {
 	@EventListener
 	private void processPostDeploy(PostDeployEvent event) {
 		System.out.println("Start Executar Regua");
-		runtimeService.startProcessInstanceByKey(Processos.EXECUTAR_REGUA.getDefinitionKey());
+		runtimeService.startProcessInstanceByKey(Processos.LOAD_CHAR.getDefinitionKey());
 	}
 	
 	
@@ -58,10 +58,8 @@ public class Camunda {
 	
 	
 	public enum Processos{
-	    CONSULTAR_REGUA("consultar_regua_process"),
-	    CONFIGURAR_REGUA("configurar_regua_process_key"),
-	    CONSULTAR_DIVIDAS("consultar_dividas_process"),
-	    EXECUTAR_REGUA("executar_regua_process_key");
+	    LOAD_CHAR("load_char_process")
+	    ;
 	    
 	    private String definitionKey;
 
@@ -81,15 +79,8 @@ public class Camunda {
 	
 	
 	public enum Variaveis{
-	    DEVEDORES_DTOS("devedoresDtos", ""),
-	    VENCIMENTOS_REGUA("vencimentosRegua", ""),
-	    METAREGUA_DTO("metaReguaDto", ""),
-	    REQUISICAO("requisicao", ""),
-	    REQUISICOES_ACIONAMENTOS_DTOS("requisicoesAcionamentosDtos", ""),
-	    LOOPCOUNTER("loopCounter", ""),
-	    CONFIGURACAO("configuracao", ""),
-	    CONFIGURACAO_OK("configuracaoOk", ""),
-	    CONFIGURACAO_MSG_FALHA("configuracaoMsgFalha", "");
+	    CHARS("chars", "")
+	    ;
 	    
 	    private String nome;
 	    private String descricao;
